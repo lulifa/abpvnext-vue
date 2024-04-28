@@ -1,6 +1,6 @@
 ﻿namespace Pure.AbpPro.Cli;
 
-public class Class1
+public class GlobalUsings
 {
 
 }

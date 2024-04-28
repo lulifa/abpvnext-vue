@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Pure\AbpPro\Cli\Args\" />
+    <Folder Include="Pure\AbpPro\Cli\Commands\" />
+    <Folder Include="Pure\AbpPro\Cli\GitHub\" />
+    <Folder Include="Pure\AbpPro\Cli\NuGet\" />
+    <Folder Include="Pure\AbpPro\Cli\Options\" />
+    <Folder Include="Pure\AbpPro\Cli\SourceCode\" />
+    <Folder Include="Pure\AbpPro\Cli\Utils\" />
+  </ItemGroup>
+
 </Project>
