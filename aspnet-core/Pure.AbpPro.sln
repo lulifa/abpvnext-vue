@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frameworks", "frameworks", "{26CC80A4-1875-42AB-9845-9BF988A1BA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A25A7DF1-0A22-44E0-B783-F2B85C4A9543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Cli", "frameworks\src\Pure.AbpPro.Cli\Pure.AbpPro.Cli.csproj", "{2A6E460C-28F8-4091-B2B7-C60D981C48C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Cli.Core", "frameworks\src\Pure.AbpPro.Cli.Core\Pure.AbpPro.Cli.Core.csproj", "{8718F412-9BDD-42FA-B658-074AFC0C181F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A6E460C-28F8-4091-B2B7-C60D981C48C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6E460C-28F8-4091-B2B7-C60D981C48C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6E460C-28F8-4091-B2B7-C60D981C48C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6E460C-28F8-4091-B2B7-C60D981C48C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8718F412-9BDD-42FA-B658-074AFC0C181F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8718F412-9BDD-42FA-B658-074AFC0C181F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8718F412-9BDD-42FA-B658-074AFC0C181F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8718F412-9BDD-42FA-B658-074AFC0C181F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A25A7DF1-0A22-44E0-B783-F2B85C4A9543} = {26CC80A4-1875-42AB-9845-9BF988A1BA18}
+		{2A6E460C-28F8-4091-B2B7-C60D981C48C8} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
+		{8718F412-9BDD-42FA-B658-074AFC0C181F} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
+	EndGlobalSection
+EndGlobal
