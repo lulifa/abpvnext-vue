@@ -12,7 +12,7 @@
     <ImplicitUsings>true</ImplicitUsings>
     <Authors>lulifa</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <RepositoryUrl>https://github.com/lulifa/abp-vnext-pro-vue</RepositoryUrl>
+    <RepositoryUrl>https://github.com/lulifa/abpvnext-vue</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>

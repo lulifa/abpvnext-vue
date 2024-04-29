@@ -13,8 +13,8 @@ public class AbpProCliCoreModule : AbpModule
         Configure<AbpProCliOptions>(options =>
         {
             options.Owner = "lulifa";
-            options.RepositoryId = "abp-vnext-pro-vue";
-            options.Token = "abp-vnext-pro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abp-vnext-pro";
+            options.RepositoryId = "abpvnext-vue";
+            options.Token = "abpvnext-vue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abpvnext-vue";
             options.Templates = new List<AbpProTemplateOptions>()
             {
                 new AbpProTemplateOptions("abp-vnext-pro-vue", "pro", "源码版本", true)
