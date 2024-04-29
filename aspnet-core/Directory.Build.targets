@@ -14,11 +14,14 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/lulifa/abpvnext-vue</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>package-readme.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath=""/>
+    <None Include="$(MSBuildThisFileDirectory)package-readme.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>
