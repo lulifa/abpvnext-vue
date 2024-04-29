@@ -396,3 +396,22 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+/aspnet-core/services/host/Pure.AbpPro.HttpApi.Host/logs
+/aspnet-core/services/host/Pure.AbpPro.IdentityServer/Logs
+/aspnet-core/services/host/Pure.AbpPro.IdentityServer/Logs
+/aspnet-core/gateways/Pure.AbpPro.WebGateway/appsettings.Production.json
+/aspnet-core/services/host/Pure.AbpPro.IdentityServer/appsettings.Production.json
+/aspnet-core/services/host/Pure.AbpPro.HttpApi.Host/appsettings.Production.json
+aspnet-core/services/host/Pure.AbpPro.Web.Blazor.Server/Logs/logs.txt
+/nupkgs
+/aspnet-core/Pure.AbpPro.sln.DotSettings
+/aspnet-core/services/host/Pure.AbpPro.HttpApi.Host/logs
+/docs/site
+/aspnet-core/modules/LanguageManagement/host/Pure.AbpPro.LanguageManagement.HttpApi.Host/Logs
+/aspnet-core/frameworks/test/Pure.AbpPro.EntityFrameworkCore.Mysql.Tests/Logs
+/aspnet-core/frameworks/test/Pure.AbpPro.EntityFrameworkCore.Mysql.Tests/wwwroot/libs
+/templates/abp-vnext-pro-nuget-all/aspnet-core/host/MyCompanyName.MyProjectName.HttpApi.Host/logs
+/templates/abp-vnext-pro-nuget-simplify/aspnet-core/host/MyCompanyName.MyProjectName.HttpApi.Host/logs
+/vben28/pnpm-lock.yaml

@@ -1,5 +1,11 @@
 ﻿<Project>
-    <ItemGroup>
-        
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Volo.Abp" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Json" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Autofac" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Threading" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Ddd.Domain" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Modularity" Version="8.1.1"/>
+
+  </ItemGroup>
 </Project>

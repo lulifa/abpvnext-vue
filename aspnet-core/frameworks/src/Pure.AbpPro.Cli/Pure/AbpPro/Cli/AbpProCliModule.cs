@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Pure.AbpPro.Cli;
 
-namespace Pure.AbpPro.Cli.Pure.AbpPro.Cli
+[DependsOn(
+    typeof(AbpProCliCoreModule),
+    typeof(AbpAutofacModule)
+)]
+public class AbpProCliModule : AbpModule
 {
-    internal class AbpProCliModule
-    {
-    }
 }

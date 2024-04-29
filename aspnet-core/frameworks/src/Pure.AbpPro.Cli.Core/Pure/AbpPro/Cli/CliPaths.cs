@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Pure.AbpPro.Cli;
 
-namespace Pure.AbpPro.Cli.Core.Pure.AbpPro.Cli
+public class CliPaths
 {
-    internal class CliPaths
-    {
-    }
+    public static string Log => Path.Combine(AbpRootPath, "logs");
+
+    public static string TemplateCache => Path.Combine(AbpRootPath, "templates");
+
+    public static readonly string AbpRootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".abp.pro");
 }

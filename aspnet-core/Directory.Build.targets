@@ -1,17 +1,44 @@
 ﻿<Project>
 
-    <Import Project="Directory.Build.Microsoft.targets"/>
-    <Import Project="Directory.Build.Volo.targets"/>
+  <Import Project="Directory.Build.Microsoft.targets"/>
+  <Import Project="Directory.Build.Volo.targets"/>
 
-    <PropertyGroup>
-        
-    </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Version>1.0.0</Version>
+    <Description>Pure Abp vNext Pro</Description>
+    <NoWarn>$(NoWarn);CS1591;CS0436;NU1504</NoWarn>
+    <AbpProjectType>app</AbpProjectType>
+    <ImplicitUsings>true</ImplicitUsings>
+    <Authors>lulifa</Authors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryUrl>https://github.com/lulifa/abp-vnext-pro-vue</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath=""/>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
 
-    <ItemGroup>
-        
-    </ItemGroup>
+  <ItemGroup>
+
+    <!-- Octokit 邮件-->
+    <PackageReference Update="Octokit" Version="9.0.0"/>
+
+    <!-- Serilog 日志-->
+    <PackageReference Update="Serilog" Version="3.1.1"/>
+    <PackageReference Update="Serilog.Extensions.Logging" Version="8.0.0"/>
+    <PackageReference Update="Serilog.Sinks.Async" Version="1.5.0"/>
+    <PackageReference Update="Serilog.Sinks.File" Version="5.0.0"/>
+    <PackageReference Update="Serilog.Sinks.Console" Version="5.0.0"/>
+    <PackageReference Update="Serilog.AspNetCore" Version="8.0.0"/>
+    <PackageReference Update="Serilog.Exceptions" Version="8.4.0"/>
+    <PackageReference Update="Serilog.Settings.Configuration" Version="8.0.0"/>
+    <PackageReference Update="Serilog.Sinks.Elasticsearch" Version="9.0.3"/>
+
+    <!-- Polly 重试机制-->
+    <PackageReference Update="Polly" Version="8.2.0"/>
+
+  </ItemGroup>
 </Project>

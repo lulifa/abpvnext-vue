@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Pure.AbpPro.Cli;
 
-namespace Pure.AbpPro.Cli.Core.Pure.AbpPro.Cli
+public class AbpCliOptions
 {
-    internal class AbpCliOptions
+    public Dictionary<string, Type> Commands { get; }
+
+
+    /// <summary>
+    /// Default value: "pure.abp".
+    /// </summary>
+    public string ToolName { get; set; } = "pure.abp";
+
+    public AbpCliOptions()
     {
+        Commands = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase);
     }
 }

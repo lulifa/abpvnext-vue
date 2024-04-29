@@ -3,17 +3,18 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pure\AbpPro\Cli\Args\" />
-    <Folder Include="Pure\AbpPro\Cli\Commands\" />
-    <Folder Include="Pure\AbpPro\Cli\GitHub\" />
-    <Folder Include="Pure\AbpPro\Cli\NuGet\" />
-    <Folder Include="Pure\AbpPro\Cli\Options\" />
-    <Folder Include="Pure\AbpPro\Cli\SourceCode\" />
-    <Folder Include="Pure\AbpPro\Cli\Utils\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Octokit" />
+    <PackageReference Include="Polly" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+    <PackageReference Include="Volo.Abp.Autofac" />
+    <PackageReference Include="Volo.Abp.Threading" />
+    <PackageReference Include="SharpZipLib" Version="1.3.3" />
   </ItemGroup>
 
 </Project>
