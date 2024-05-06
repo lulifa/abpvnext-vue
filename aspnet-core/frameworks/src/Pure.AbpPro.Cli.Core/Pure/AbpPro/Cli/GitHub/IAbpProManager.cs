@@ -1,4 +1,4 @@
-namespace Pure.AbpPro.Cli.Github;
+namespace Pure.AbpPro.Cli.Core;
 
 public interface IAbpProManager
 {

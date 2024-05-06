@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli.Commands;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 public class NewCommand : IConsoleCommand, ITransientDependency
 {
@@ -6,14 +6,14 @@ public class NewCommand : IConsoleCommand, ITransientDependency
     private readonly ILogger<NewCommand> _logger;
     private readonly AbpCliOptions _abpCliOptions;
     private readonly IServiceScopeFactory _serviceScopeFactory;
-    private readonly Options.AbpProCliOptions _cliOptions;
+    private readonly AbpProCliOptions _cliOptions;
     private readonly ISourceCodeManager _sourceCodeManager;
 
     public NewCommand(
         IOptions<AbpCliOptions> abpCliOptions,
         ILogger<NewCommand> logger,
         IServiceScopeFactory serviceScopeFactory,
-        IOptions<Options.AbpProCliOptions> options,
+        IOptions<AbpProCliOptions> options,
         ISourceCodeManager sourceCodeManager)
     {
         _logger = logger;

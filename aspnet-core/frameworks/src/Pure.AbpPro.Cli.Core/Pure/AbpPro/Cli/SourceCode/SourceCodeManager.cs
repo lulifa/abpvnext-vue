@@ -1,4 +1,4 @@
-namespace Pure.AbpPro.Cli.SourceCode;
+namespace Pure.AbpPro.Cli.Core;
 
 public class SourceCodeManager : ITransientDependency, ISourceCodeManager
 {
@@ -6,7 +6,7 @@ public class SourceCodeManager : ITransientDependency, ISourceCodeManager
     private readonly IAbpProManager _abpProManager;
     private readonly AbpProCliOptions _cliOptions;
 
-    public SourceCodeManager(ILogger<SourceCodeManager> logger, IOptions<Options.AbpProCliOptions> options, IAbpProManager abpProManager)
+    public SourceCodeManager(ILogger<SourceCodeManager> logger, IOptions<AbpProCliOptions> options, IAbpProManager abpProManager)
     {
         _logger = logger;
         _abpProManager = abpProManager;

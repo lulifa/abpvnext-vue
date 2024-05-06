@@ -1,6 +1,7 @@
 ﻿// Global using directives
 
 global using Microsoft.Extensions.DependencyInjection;
+global using Pure.AbpPro.Cli.Core;
 global using Serilog;
 global using Serilog.Events;
 global using Volo.Abp;

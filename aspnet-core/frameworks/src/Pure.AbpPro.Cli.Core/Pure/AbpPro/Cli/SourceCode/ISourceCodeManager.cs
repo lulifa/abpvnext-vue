@@ -1,4 +1,4 @@
-namespace Pure.AbpPro.Cli.SourceCode;
+namespace Pure.AbpPro.Cli.Core;
 
 public interface ISourceCodeManager
 {

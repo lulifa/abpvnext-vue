@@ -1,8 +1,7 @@
 ﻿// Global using directives
 
-global using Pure.AbpPro.Localization;
-global using Microsoft.Extensions.Options;
 global using Microsoft.Extensions.Localization;
+global using Microsoft.Extensions.Options;
 global using Volo.Abp.Autofac;
 global using Volo.Abp.DependencyInjection;
 global using Volo.Abp.ExceptionHandling;

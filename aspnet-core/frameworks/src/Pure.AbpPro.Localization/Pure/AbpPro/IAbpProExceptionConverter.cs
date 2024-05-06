@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro;
+﻿namespace Pure.AbpPro.Localization;
 
 public interface IAbpProExceptionConverter
 {

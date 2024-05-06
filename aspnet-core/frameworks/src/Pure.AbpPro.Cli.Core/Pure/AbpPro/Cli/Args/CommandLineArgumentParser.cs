@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli.Args;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 public class CommandLineArgumentParser : ICommandLineArgumentParser, ITransientDependency
 {

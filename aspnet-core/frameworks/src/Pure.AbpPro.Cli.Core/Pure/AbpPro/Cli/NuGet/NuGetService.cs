@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli.NuGet;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 public class NuGetService : DomainService
 {

@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro;
+﻿namespace Pure.AbpPro.Localization;
 
 public class AbpProExceptionConverter : IAbpProExceptionConverter, ITransientDependency
 {

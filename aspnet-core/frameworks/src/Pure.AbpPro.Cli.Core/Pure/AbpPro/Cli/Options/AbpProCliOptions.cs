@@ -1,4 +1,4 @@
-namespace Pure.AbpPro.Cli.Options;
+namespace Pure.AbpPro.Cli.Core;
 
 public class AbpProCliOptions
 {

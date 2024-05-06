@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli.Utils;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 public static class ReplacePackageReferenceExtensions
 {

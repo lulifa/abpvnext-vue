@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 [DependsOn(
     typeof(AbpDddDomainModule)

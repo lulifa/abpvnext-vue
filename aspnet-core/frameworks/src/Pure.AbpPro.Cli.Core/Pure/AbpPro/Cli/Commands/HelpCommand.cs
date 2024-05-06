@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.Cli.Commands;
+﻿namespace Pure.AbpPro.Cli.Core;
 
 public class HelpCommand : IConsoleCommand, ITransientDependency
 {
