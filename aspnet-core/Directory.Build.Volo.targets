@@ -9,5 +9,11 @@
 
     <PackageReference Update="Volo.Abp.Localization" Version="8.1.1" />
 
+    <PackageReference Update="Volo.Abp.Json" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Core" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.EventBus" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.EntityFrameworkCore" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Authorization.Abstractions" Version="8.1.1"/>
+
   </ItemGroup>
 </Project>

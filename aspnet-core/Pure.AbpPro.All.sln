@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Localization", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Core", "frameworks\src\Pure.AbpPro.Core\Pure.AbpPro.Core.csproj", "{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.CAP", "frameworks\src\Pure.AbpPro.CAP\Pure.AbpPro.CAP.csproj", "{5BC45841-D452-4FF1-A440-41EDE44CA88F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.CAP.EntityFrameworkCore", "frameworks\src\Pure.AbpPro.CAP.EntityFrameworkCore\Pure.AbpPro.CAP.EntityFrameworkCore.csproj", "{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,14 @@ Global
 		{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC45841-D452-4FF1-A440-41EDE44CA88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC45841-D452-4FF1-A440-41EDE44CA88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC45841-D452-4FF1-A440-41EDE44CA88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC45841-D452-4FF1-A440-41EDE44CA88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +68,8 @@ Global
 		{50F65B19-999A-423E-B15D-49D21510066A} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 		{4EB25F5E-7D39-4A62-AA54-1B8906415ECA} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 		{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
+		{5BC45841-D452-4FF1-A440-41EDE44CA88F} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
+		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40050103-84AD-4B99-AAB3-0A1B551E240F}

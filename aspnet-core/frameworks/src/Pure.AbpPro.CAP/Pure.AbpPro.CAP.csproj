@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Authorization.Abstractions" />
+    <PackageReference Include="Volo.Abp.Core" />
+    <PackageReference Include="Volo.Abp.EventBus" />
+    <PackageReference Include="DotNetCore.CAP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pure.AbpPro.Localization\Pure.AbpPro.Localization.csproj" />
+  </ItemGroup>
+
+</Project>
