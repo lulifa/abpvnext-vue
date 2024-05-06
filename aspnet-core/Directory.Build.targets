@@ -51,5 +51,8 @@
     <PackageReference Update="DotNetCore.CAP.InMemoryStorage" Version="8.0.0"/>
     <PackageReference Update="Savorboard.CAP.InMemoryMessageQueue" Version="7.0.0"/>
 
+    <!-- NEST ElasticSearch-->
+    <PackageReference Update="NEST" Version="7.17.5"/>
+
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@ public class Program
             .MinimumLevel.Override("Volo.Abp.IdentityModel", LogEventLevel.Information)
             .MinimumLevel.Override("Volo.Abp.Cli", LogEventLevel.Information)
             .Enrich.FromLogContext()
-            .WriteTo.File(Path.Combine(CliPaths.Log, "lion.abp-pro-cli-logs.txt"))
+            .WriteTo.File(Path.Combine(CliPaths.Log, "pure.abp-pro-cli-logs.txt"))
             .WriteTo.Console()
             .CreateLogger();
         using var application = await AbpApplicationFactory.CreateAsync<AbpProCliModule>(

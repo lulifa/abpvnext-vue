@@ -28,6 +28,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.CAP", "framewor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.CAP.EntityFrameworkCore", "frameworks\src\Pure.AbpPro.CAP.EntityFrameworkCore\Pure.AbpPro.CAP.EntityFrameworkCore.csproj", "{FD89CCD9-179A-4519-A116-13223F6A5455}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.ElasticSearch", "frameworks\src\Pure.AbpPro.ElasticSearch\Pure.AbpPro.ElasticSearch.csproj", "{C304BAFA-C7C7-4054-BD2D-33665D4787EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.Starter", "frameworks\src\Pure.AbpPro.Starter\Pure.AbpPro.Starter.csproj", "{A8D51D81-3AA3-441A-BFE5-81315453E1A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +62,14 @@ Global
 		{FD89CCD9-179A-4519-A116-13223F6A5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD89CCD9-179A-4519-A116-13223F6A5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD89CCD9-179A-4519-A116-13223F6A5455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C304BAFA-C7C7-4054-BD2D-33665D4787EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C304BAFA-C7C7-4054-BD2D-33665D4787EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C304BAFA-C7C7-4054-BD2D-33665D4787EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C304BAFA-C7C7-4054-BD2D-33665D4787EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +82,7 @@ Global
 		{BE564351-E769-428E-8020-1170D6EEB831} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
 		{FF0D2C47-7A3F-4742-AD20-4C55D662CD3D} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
 		{FD89CCD9-179A-4519-A116-13223F6A5455} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
+		{C304BAFA-C7C7-4054-BD2D-33665D4787EA} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
+		{A8D51D81-3AA3-441A-BFE5-81315453E1A3} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
 	EndGlobalSection
 EndGlobal

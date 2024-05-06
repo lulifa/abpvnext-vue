@@ -20,13 +20,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Solution Items", "0.Solut
 		NuGet.Config = NuGet.Config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Localization", "frameworks\src\Pure.AbpPro.Localization\Pure.AbpPro.Localization.csproj", "{4EB25F5E-7D39-4A62-AA54-1B8906415ECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.Localization", "frameworks\src\Pure.AbpPro.Localization\Pure.AbpPro.Localization.csproj", "{4EB25F5E-7D39-4A62-AA54-1B8906415ECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Core", "frameworks\src\Pure.AbpPro.Core\Pure.AbpPro.Core.csproj", "{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.Core", "frameworks\src\Pure.AbpPro.Core\Pure.AbpPro.Core.csproj", "{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.CAP", "frameworks\src\Pure.AbpPro.CAP\Pure.AbpPro.CAP.csproj", "{5BC45841-D452-4FF1-A440-41EDE44CA88F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.CAP", "frameworks\src\Pure.AbpPro.CAP\Pure.AbpPro.CAP.csproj", "{5BC45841-D452-4FF1-A440-41EDE44CA88F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.CAP.EntityFrameworkCore", "frameworks\src\Pure.AbpPro.CAP.EntityFrameworkCore\Pure.AbpPro.CAP.EntityFrameworkCore.csproj", "{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.CAP.EntityFrameworkCore", "frameworks\src\Pure.AbpPro.CAP.EntityFrameworkCore\Pure.AbpPro.CAP.EntityFrameworkCore.csproj", "{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.ElasticSearch", "frameworks\src\Pure.AbpPro.ElasticSearch\Pure.AbpPro.ElasticSearch.csproj", "{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Starter", "frameworks\src\Pure.AbpPro.Starter\Pure.AbpPro.Starter.csproj", "{D686415A-F078-417C-915E-AEFD0FA1DB98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +62,14 @@ Global
 		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D686415A-F078-417C-915E-AEFD0FA1DB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D686415A-F078-417C-915E-AEFD0FA1DB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D686415A-F078-417C-915E-AEFD0FA1DB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D686415A-F078-417C-915E-AEFD0FA1DB98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +82,8 @@ Global
 		{00CF5296-ABB2-4A16-90A9-7E8FCE811E4E} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 		{5BC45841-D452-4FF1-A440-41EDE44CA88F} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 		{C37DD6B0-1D6D-4A29-8415-14A3499A95D9} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
+		{DDEDBE0D-BF46-4C1C-907B-6E827D73BC26} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
+		{D686415A-F078-417C-915E-AEFD0FA1DB98} = {CCA54D1C-51AC-4034-A1B8-C3587640E1AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40050103-84AD-4B99-AAB3-0A1B551E240F}
