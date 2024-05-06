@@ -54,5 +54,7 @@
     <!-- NEST ElasticSearch-->
     <PackageReference Update="NEST" Version="7.17.5"/>
 
+    <PackageReference Update="SharpZipLib" Version="1.4.2"/>
+
   </ItemGroup>
 </Project>
