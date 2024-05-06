@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Pure.AbpPro.Localization</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" />
+    <PackageReference Include="Volo.Abp.Autofac" />
+    <PackageReference Include="Volo.Abp.Localization" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pure\AbpPro\Localization\Resources\*.json" />
+    <EmbeddedResource Include="Pure\AbpPro\Localization\Resources\*.json" />
+  </ItemGroup>
+
+</Project>

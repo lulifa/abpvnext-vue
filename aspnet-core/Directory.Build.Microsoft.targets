@@ -3,5 +3,8 @@
     <PackageReference Update="Microsoft.Extensions.Http" Version="8.0.0"/>
     <PackageReference Update="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+
+    <PackageReference Update="Microsoft.Extensions.FileProviders.Embedded" Version="8.0.0"/>
+    
   </ItemGroup>
 </Project>

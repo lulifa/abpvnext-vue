@@ -7,5 +7,7 @@
     <PackageReference Update="Volo.Abp.Ddd.Domain" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.Modularity" Version="8.1.1"/>
 
+    <PackageReference Update="Volo.Abp.Localization" Version="8.1.1" />
+
   </ItemGroup>
 </Project>
