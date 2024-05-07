@@ -15,5 +15,11 @@
     <PackageReference Update="Volo.Abp.EntityFrameworkCore" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.Authorization.Abstractions" Version="8.1.1"/>
 
+    <PackageReference Update="Volo.Abp.AspNetCore" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Swashbuckle" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.AspNetCore.Serilog" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.AspNetCore.MultiTenancy" Version="8.1.1"/>
+    <PackageReference Update="Volo.Abp.Caching.StackExchangeRedis" Version="8.1.1"/>
+
   </ItemGroup>
 </Project>

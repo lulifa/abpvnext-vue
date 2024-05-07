@@ -32,6 +32,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.ElasticSearch",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.AbpPro.Starter", "frameworks\src\Pure.AbpPro.Starter\Pure.AbpPro.Starter.csproj", "{A8D51D81-3AA3-441A-BFE5-81315453E1A3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateways", "gateways", "{F7321B19-CCA0-4FB8-9359-56D545B8294C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.WebGateway", "gateways\Pure.AbpPro.WebGateway\Pure.AbpPro.WebGateway.csproj", "{524B8A24-F272-4238-AE45-46811D394887}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{445AB145-224A-4883-869D-963961707ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Shared.Hosting.Gateways", "shared\Pure.AbpPro.Shared.Hosting.Gateways\Pure.AbpPro.Shared.Hosting.Gateways.csproj", "{66C83251-CE5F-42BE-9BFF-7B135BF49664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.AbpPro.Shared.Hosting.Microservices", "shared\Pure.AbpPro.Shared.Hosting.Microservices\Pure.AbpPro.Shared.Hosting.Microservices.csproj", "{95DCFB3E-C4BF-4524-B137-CB0005280429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +80,18 @@ Global
 		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8D51D81-3AA3-441A-BFE5-81315453E1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524B8A24-F272-4238-AE45-46811D394887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524B8A24-F272-4238-AE45-46811D394887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524B8A24-F272-4238-AE45-46811D394887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524B8A24-F272-4238-AE45-46811D394887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C83251-CE5F-42BE-9BFF-7B135BF49664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C83251-CE5F-42BE-9BFF-7B135BF49664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C83251-CE5F-42BE-9BFF-7B135BF49664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C83251-CE5F-42BE-9BFF-7B135BF49664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95DCFB3E-C4BF-4524-B137-CB0005280429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95DCFB3E-C4BF-4524-B137-CB0005280429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95DCFB3E-C4BF-4524-B137-CB0005280429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95DCFB3E-C4BF-4524-B137-CB0005280429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +106,8 @@ Global
 		{FD89CCD9-179A-4519-A116-13223F6A5455} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
 		{C304BAFA-C7C7-4054-BD2D-33665D4787EA} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
 		{A8D51D81-3AA3-441A-BFE5-81315453E1A3} = {A25A7DF1-0A22-44E0-B783-F2B85C4A9543}
+		{524B8A24-F272-4238-AE45-46811D394887} = {F7321B19-CCA0-4FB8-9359-56D545B8294C}
+		{66C83251-CE5F-42BE-9BFF-7B135BF49664} = {445AB145-224A-4883-869D-963961707ABF}
+		{95DCFB3E-C4BF-4524-B137-CB0005280429} = {445AB145-224A-4883-869D-963961707ABF}
 	EndGlobalSection
 EndGlobal

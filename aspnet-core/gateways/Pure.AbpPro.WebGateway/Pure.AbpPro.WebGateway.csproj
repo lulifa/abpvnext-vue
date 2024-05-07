@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PackageId>Pure.AbpPro.WebGateway</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Pure.AbpPro.Shared.Hosting.Gateways\Pure.AbpPro.Shared.Hosting.Gateways.csproj" />
+  </ItemGroup>
+
+</Project>
