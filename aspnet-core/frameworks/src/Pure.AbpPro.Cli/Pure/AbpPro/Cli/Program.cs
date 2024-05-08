@@ -12,8 +12,8 @@ public class Program
             .MinimumLevel.Override("Volo.Abp.IdentityModel", LogEventLevel.Information)
             .MinimumLevel.Override("Volo.Abp.Cli", LogEventLevel.Information)
             .Enrich.FromLogContext()
-            .WriteTo.File(Path.Combine(CliPaths.Log, "pure.abp-pro-cli-logs.txt"))
-            .WriteTo.Console()
+            .WriteTo.Async(c => c.File(Path.Combine(CliPaths.Log, "pure.abp-pro-cli-logs.txt"), rollingInterval: RollingInterval.Day))
+            .WriteTo.Async(c => c.Console())
             .CreateLogger();
         using var application = await AbpApplicationFactory.CreateAsync<AbpProCliModule>(
             options =>
