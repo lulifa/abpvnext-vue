@@ -1,18 +1,13 @@
 using Microsoft.AspNetCore.Cors;
-using Pure.AbpPro.BasicModule;
-using Pure.AbpPro.BasicModule.EntityFrameworkCore;
-using Pure.AbpPro.CAP.EntityFrameworkCore;
 using Pure.AbpPro.CAP;
+using Pure.AbpPro.CAP.EntityFrameworkCore;
 using Pure.AbpPro.EntityFrameworkCore;
 using Pure.AbpPro.Shared.Hosting.Microservices;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
-using Volo.Abp.Autofac;
-using Volo.Abp.EntityFrameworkCore.MySQL;
 using Volo.Abp.Security.Claims;
-using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 
 namespace Pure.AbpPro;
 
@@ -152,6 +147,7 @@ public class AbpProHttpApiHostModule : AbpModule
     {
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
+        var configuration = context.GetConfiguration();
 
         if (env.IsDevelopment())
         {
@@ -177,15 +173,25 @@ public class AbpProHttpApiHostModule : AbpModule
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "AbpPro API");
-
-            var configuration = context.GetConfiguration();
-            options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthScopes("AbpPro");
+            options.SwaggerEndpoint("/swagger/AbpPro/swagger.json", "AbpPro API");
+            options.DocExpansion(DocExpansion.None);
+            options.DefaultModelsExpandDepth(-1);
         });
 
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+        app.UseUnitOfWork();
+        app.UseConfiguredEndpoints(endpoints => { endpoints.MapHealthChecks("/health"); });
+        // app.UseHangfireDashboard("/hangfire", new DashboardOptions()
+        // {
+        //     Authorization = new[] { new CustomHangfireAuthorizeFilter() },
+        //     IgnoreAntiforgeryToken = true
+        // });
+
+        if (configuration.GetValue("Consul:Enabled", false))
+        {
+            app.UseConsul();
+        }
     }
 }
