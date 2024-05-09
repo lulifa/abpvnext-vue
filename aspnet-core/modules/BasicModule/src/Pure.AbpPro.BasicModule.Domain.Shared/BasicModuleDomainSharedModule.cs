@@ -1,8 +1,14 @@
 ﻿namespace Pure.AbpPro.BasicModule;
 
 [DependsOn(
-    typeof(AbpValidationModule),
-    typeof(AbpDddDomainSharedModule)
+    typeof(AbpAuditLoggingDomainSharedModule),
+    typeof(AbpBackgroundJobsDomainSharedModule),
+    typeof(AbpFeatureManagementDomainSharedModule),
+    typeof(AbpIdentityDomainSharedModule),
+    typeof(AbpPermissionManagementDomainSharedModule),
+    typeof(AbpSettingManagementDomainSharedModule),
+    typeof(AbpTenantManagementDomainSharedModule),
+    typeof(AbpProCoreModule)
 )]
 public class BasicModuleDomainSharedModule : AbpModule
 {

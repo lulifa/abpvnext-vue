@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore"  />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" />

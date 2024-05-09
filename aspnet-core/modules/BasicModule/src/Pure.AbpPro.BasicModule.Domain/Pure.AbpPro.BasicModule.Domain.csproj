@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>Pure.AbpPro.BasicModule</RootNamespace>
   </PropertyGroup>
 
@@ -15,6 +15,7 @@
     <PackageReference Include="Volo.Abp.TenantManagement.Domain" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Domain" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain" />
+    <ProjectReference Include="..\..\..\..\frameworks\src\Pure.AbpPro.Core\Pure.AbpPro.Core.csproj" />
     <ProjectReference Include="..\Pure.AbpPro.BasicModule.Domain.Shared\Pure.AbpPro.BasicModule.Domain.Shared.csproj" />
   </ItemGroup>
 

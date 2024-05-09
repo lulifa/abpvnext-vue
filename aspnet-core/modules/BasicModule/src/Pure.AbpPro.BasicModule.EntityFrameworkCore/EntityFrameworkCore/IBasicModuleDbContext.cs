@@ -4,9 +4,15 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
 
 [ConnectionStringName(BasicModuleDbProperties.ConnectionStringName)]
-public interface IBasicModuleDbContext : IEfCoreDbContext
+public interface IBasicModuleDbContext :
+    IEfCoreDbContext,
+    IFeatureManagementDbContext,
+    IIdentityDbContext,
+    IPermissionManagementDbContext,
+    ISettingManagementDbContext,
+    ITenantManagementDbContext,
+    IBackgroundJobsDbContext,
+    IAuditLoggingDbContext
 {
-    /* Add DbSet for each Aggregate Root here. Example:
-     * DbSet<Question> Questions { get; }
-     */
+
 }
