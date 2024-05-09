@@ -133,7 +133,7 @@ public static class ReplaceHelper
         string moduleName,
         string version)
     {
-        var result = content.ReplacePackageReferenceBasicManagement()
+        var result = content.ReplacePackageReferenceBasicModule()
             .ReplacePackageReferenceLanguageManagement()
             .ReplacePackageReferenceFileManagement()
             .ReplacePackageReferenceDataDictionaryManagement()

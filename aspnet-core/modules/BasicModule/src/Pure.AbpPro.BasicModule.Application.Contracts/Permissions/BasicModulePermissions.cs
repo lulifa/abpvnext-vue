@@ -1,8 +1,30 @@
-﻿namespace Pure.AbpPro.BasicModule.Permissions;
+﻿using Volo.Abp.Reflection;
+
+namespace Pure.AbpPro.BasicModule.Permissions;
 
 public class BasicModulePermissions
 {
-    public const string GroupName = "BasicModule";
+    /// <summary>
+    /// 系统管理扩展权限
+    /// </summary>
+    public static class SystemManagement
+    {
+        public const string Default = "AbpIdentity";
+        public const string UserEnable = Default + ".Users.Enable";
+        public const string UserExport = Default + ".Users.Export";
+        public const string AuditLog = Default + ".AuditLog";
+        public const string Setting = Default + ".Setting";
+        public const string IdentitySecurityLog = Default + ".IdentitySecurityLogs";
+        public const string OrganizationUnit = Default + ".OrganizationUnitManagement";
+        public const string FeatureManagement = Default + ".FeatureManagement";
+        public static class OrganizationUnitManagement
+        {
+            public const string Default = SystemManagement.Default + ".OrganizationUnitManagement";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+    }
 
     public static string[] GetAll()
     {

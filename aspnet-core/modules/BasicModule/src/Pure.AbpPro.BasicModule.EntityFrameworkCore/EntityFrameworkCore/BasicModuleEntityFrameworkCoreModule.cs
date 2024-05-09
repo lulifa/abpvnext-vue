@@ -10,9 +10,10 @@ public class BasicModuleEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<BasicModuleDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
+            options.AddDefaultRepositories(includeAllEntities: true);
         });
     }
 }

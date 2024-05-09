@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>Pure.AbpPro.BasicModule</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Magicodes.IE.Excel" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" />
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.Contracts" />
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" />

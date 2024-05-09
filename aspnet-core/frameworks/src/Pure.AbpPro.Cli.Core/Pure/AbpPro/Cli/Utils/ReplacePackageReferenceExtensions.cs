@@ -16,31 +16,31 @@ public static class ReplacePackageReferenceExtensions
             ;
     }
 
-    public static string ReplacePackageReferenceBasicManagement(this string content)
+    public static string ReplacePackageReferenceBasicModule(this string content)
     {
         return content
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.Application\\Pure.AbpPro.BasicManagement.Application.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.Application\"/>")
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.Application\\Pure.AbpPro.BasicModule.Application.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.Application\"/>")
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.Application.Contracts\\Pure.AbpPro.BasicManagement.Application.Contracts.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.Application.Contracts\"/>")
-            .Replace("<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.Domain\\Pure.AbpPro.BasicManagement.Domain.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.Domain\"/>")
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.Application.Contracts\\Pure.AbpPro.BasicModule.Application.Contracts.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.Application.Contracts\"/>")
+            .Replace("<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.Domain\\Pure.AbpPro.BasicModule.Domain.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.Domain\"/>")
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.Domain.Shared\\Pure.AbpPro.BasicManagement.Domain.Shared.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.Domain.Shared\"/>")
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.Domain.Shared\\Pure.AbpPro.BasicModule.Domain.Shared.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.Domain.Shared\"/>")
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.EntityFrameworkCore\\Pure.AbpPro.BasicManagement.EntityFrameworkCore.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.EntityFrameworkCore\"/>")
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.EntityFrameworkCore\\Pure.AbpPro.BasicModule.EntityFrameworkCore.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.EntityFrameworkCore\"/>")
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.FreeSqlRepository\\Pure.AbpPro.BasicManagement.FreeSqlRepository.csproj\"/>",
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.FreeSqlRepository\\Pure.AbpPro.BasicModule.FreeSqlRepository.csproj\"/>",
                 "<PackageReference Include=\"Pure.AbpPro.FreeSqlRepository\"/>")
-            .Replace("<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.HttpApi\\Pure.AbpPro.BasicManagement.HttpApi.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.HttpApi\"/>")
+            .Replace("<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.HttpApi\\Pure.AbpPro.BasicModule.HttpApi.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.HttpApi\"/>")
             .Replace(
-                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicManagement\\src\\Pure.AbpPro.BasicManagement.HttpApi.Client\\Pure.AbpPro.BasicManagement.HttpApi.Client.csproj\"/>",
-                "<PackageReference Include=\"Pure.AbpPro.BasicManagement.HttpApi.Client\"/>");
+                "<ProjectReference Include=\"..\\..\\..\\..\\..\\aspnet-core\\modules\\BasicModule\\src\\Pure.AbpPro.BasicModule.HttpApi.Client\\Pure.AbpPro.BasicModule.HttpApi.Client.csproj\"/>",
+                "<PackageReference Include=\"Pure.AbpPro.BasicModule.HttpApi.Client\"/>");
     }
 
     public static string ReplacePackageReferenceDataDictionaryManagement(this string content)

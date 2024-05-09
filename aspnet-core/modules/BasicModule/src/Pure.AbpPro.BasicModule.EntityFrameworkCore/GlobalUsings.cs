@@ -21,3 +21,5 @@ global using Volo.Abp.SettingManagement.EntityFrameworkCore;
 global using Volo.Abp.TenantManagement;
 global using Volo.Abp.TenantManagement.EntityFrameworkCore;
 global using Pure.AbpPro.BasicModule.Dicts.Aggregates;
+global using Volo.Abp.Domain.Entities;
+global using Volo.Abp.Domain.Repositories.EntityFrameworkCore;

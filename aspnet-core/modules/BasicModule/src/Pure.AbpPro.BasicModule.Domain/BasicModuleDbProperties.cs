@@ -2,7 +2,7 @@
 
 public static class BasicModuleDbProperties
 {
-    public static string DbTablePrefix { get; set; } = "BasicModule";
+    public static string DbTablePrefix { get; set; } = "Abp";
 
     public static string? DbSchema { get; set; } = null;
 

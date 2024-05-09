@@ -16,3 +16,4 @@ global using Volo.Abp.EventBus.Distributed;
 global using Volo.Abp.ObjectMapping;
 global using Microsoft.Extensions.DependencyInjection;
 global using Volo.Abp;
+global using Volo.Abp.Domain.Entities;

@@ -1,4 +1,6 @@
-﻿namespace Pure.AbpPro.BasicModule;
+﻿using AutoMapper;
+
+namespace Pure.AbpPro.BasicModule;
 
 public class BasicModuleApplicationAutoMapperProfile : Profile
 {

@@ -1,4 +1,6 @@
-﻿namespace Pure.AbpPro.BasicModule;
+﻿using Pure.AbpPro.BasicModule.Localization;
+
+namespace Pure.AbpPro.BasicModule;
 
 public abstract class BasicModuleAppService : ApplicationService
 {
