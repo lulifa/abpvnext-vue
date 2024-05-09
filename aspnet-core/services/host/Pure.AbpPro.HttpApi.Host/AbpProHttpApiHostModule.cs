@@ -27,7 +27,6 @@ namespace Pure.AbpPro;
         typeof(AbpProApplicationModule),
         typeof(AbpProCapModule),
         typeof(AbpProCapEntityFrameworkCoreModule),
-        typeof(AbpAspNetCoreMvcUiBasicThemeModule),
         typeof(AbpCachingStackExchangeRedisModule)
       //typeof(AbpBackgroundJobsHangfireModule)
 )]

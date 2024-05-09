@@ -85,7 +85,6 @@
     <PackageReference Update="Volo.Abp.AspNetCore" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.Core" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.EntityFrameworkCore" Version="8.1.1"/>
-    <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.EventBus" Version="8.1.1"/>
     <PackageReference Update="Volo.Abp.Localization" Version="8.1.1" />
   </ItemGroup>
