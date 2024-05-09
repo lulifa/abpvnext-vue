@@ -7,6 +7,7 @@ using Swagger;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Text;
 using Volo.Abp.MultiTenancy;
+using Volo.Abp.PermissionManagement;
 
 namespace Pure.AbpPro.BasicModule;
 
@@ -46,14 +47,10 @@ public class BasicModuleHttpApiHostModule : AbpModule
             options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
         });
 
-        Configure<AbpDistributedCacheOptions>(options =>
+        Configure<PermissionManagementOptions>(options =>
         {
-            options.KeyPrefix = "AbpPro:";
+            options.IsDynamicPermissionStoreEnabled = true;
         });
-
-        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("AbpPro");
-        var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
-        dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "BasicModule-Protection-Keys");
 
         context.Services.AddCors(options =>
         {
