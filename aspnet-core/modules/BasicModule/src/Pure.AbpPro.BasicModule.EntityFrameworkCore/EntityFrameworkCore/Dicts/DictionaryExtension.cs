@@ -1,4 +1,4 @@
-﻿namespace Pure.AbpPro.BasicModule.EntityFrameworkCore.Dicts;
+﻿namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
 
 public class DictionaryExtension
 {

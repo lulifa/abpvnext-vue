@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.Modularity;
-
-namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
+﻿namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
 
 [DependsOn(
     typeof(BasicModuleDomainModule),

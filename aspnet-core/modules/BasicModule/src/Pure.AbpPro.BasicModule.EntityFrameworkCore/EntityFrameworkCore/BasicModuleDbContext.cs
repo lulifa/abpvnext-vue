@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Pure.AbpPro.BasicModule.Dicts.Aggregates;
-using Volo.Abp.Data;
-using Volo.Abp.EntityFrameworkCore;
-
-namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
+﻿namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
 
 [ConnectionStringName(BasicModuleDbProperties.ConnectionStringName)]
 public class BasicModuleDbContext : AbpDbContext<BasicModuleDbContext>, IBasicModuleDbContext

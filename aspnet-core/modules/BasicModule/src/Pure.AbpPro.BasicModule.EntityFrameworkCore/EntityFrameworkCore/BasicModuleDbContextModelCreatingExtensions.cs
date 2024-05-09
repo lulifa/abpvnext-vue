@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Volo.Abp;
-
-namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
+﻿namespace Pure.AbpPro.BasicModule.EntityFrameworkCore;
 
 public static class BasicModuleDbContextModelCreatingExtensions
 {
