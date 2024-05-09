@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>Pure.AbpPro.BasicModule</RootNamespace>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <UserSecretsId>Pure.AbpPro.BasicModule-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\Pure.AbpPro.Shared.Hosting.Microservices\Pure.AbpPro.Shared.Hosting.Microservices.csproj" />
     <ProjectReference Include="..\..\src\Pure.AbpPro.BasicModule.HttpApi\Pure.AbpPro.BasicModule.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\Pure.AbpPro.BasicModule.Application\Pure.AbpPro.BasicModule.Application.csproj" />
     <ProjectReference Include="..\..\src\Pure.AbpPro.BasicModule.EntityFrameworkCore\Pure.AbpPro.BasicModule.EntityFrameworkCore.csproj" />

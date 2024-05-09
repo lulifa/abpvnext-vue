@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc"  />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
     <ProjectReference Include="..\Pure.AbpPro.BasicModule.Application.Contracts\Pure.AbpPro.BasicModule.Application.Contracts.csproj" />
   </ItemGroup>
 

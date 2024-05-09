@@ -1,3 +1,13 @@
+using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.IdentityModel.Tokens;
+using Polly;
+using Pure.AbpPro.BasicModule.MultiTenancy;
+using Pure.AbpPro.Shared.Hosting.Microservices;
+using Swagger;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Text;
+using Volo.Abp.MultiTenancy;
+
 namespace Pure.AbpPro.BasicModule;
 
 [DependsOn(
@@ -8,16 +18,13 @@ namespace Pure.AbpPro.BasicModule;
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpEntityFrameworkCoreMySQLModule),
-    typeof(AbpAuditLoggingEntityFrameworkCoreModule),
-    typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-    typeof(AbpSettingManagementEntityFrameworkCoreModule),
-    typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreSerilogModule),
-    typeof(AbpSwashbuckleModule)
+    typeof(AbpSwashbuckleModule),
+    typeof(AbpProSharedHostingMicroserviceModule)
     )]
 public class BasicModuleHttpApiHostModule : AbpModule
 {
-
+    private const string DefaultCorsPolicyName = "Default";
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
@@ -28,78 +35,25 @@ public class BasicModuleHttpApiHostModule : AbpModule
             options.UseMySQL();
         });
 
-        //Configure<AbpMultiTenancyOptions>(options =>
-        //{
-        //    options.IsEnabled = MultiTenancyConsts.IsEnabled;
-        //});
-
-        if (hostingEnvironment.IsDevelopment())
+        Configure<AbpMultiTenancyOptions>(options =>
         {
-            Configure<AbpVirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.ReplaceEmbeddedByPhysical<BasicModuleDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Pure.AbpPro.BasicModule.Domain.Shared", Path.DirectorySeparatorChar)));
-                options.FileSets.ReplaceEmbeddedByPhysical<BasicModuleDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Pure.AbpPro.BasicModule.Domain", Path.DirectorySeparatorChar)));
-                options.FileSets.ReplaceEmbeddedByPhysical<BasicModuleApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Pure.AbpPro.BasicModule.Application.Contracts", Path.DirectorySeparatorChar)));
-                options.FileSets.ReplaceEmbeddedByPhysical<BasicModuleApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Pure.AbpPro.BasicModule.Application", Path.DirectorySeparatorChar)));
-            });
-        }
-
-        context.Services.AddAbpSwaggerGenWithOAuth(
-            configuration["AuthServer:Authority"]!,
-            new Dictionary<string, string>
-            {
-                {"BasicModule", "BasicModule API"}
-            },
-            options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo {Title = "BasicModule API", Version = "v1"});
-                options.DocInclusionPredicate((docName, description) => true);
-                options.CustomSchemaIds(type => type.FullName);
-            });
+            options.IsEnabled = MultiTenancyConsts.IsEnabled;
+        });
 
         Configure<AbpLocalizationOptions>(options =>
         {
-            options.Languages.Add(new LanguageInfo("ar", "ar", "العربية"));
-            options.Languages.Add(new LanguageInfo("cs", "cs", "Čeština"));
             options.Languages.Add(new LanguageInfo("en", "en", "English"));
-            options.Languages.Add(new LanguageInfo("en-GB", "en-GB", "English (UK)"));
-            options.Languages.Add(new LanguageInfo("fi", "fi", "Finnish"));
-            options.Languages.Add(new LanguageInfo("fr", "fr", "Français"));
-            options.Languages.Add(new LanguageInfo("hi", "hi", "Hindi", "in"));
-            options.Languages.Add(new LanguageInfo("is", "is", "Icelandic", "is"));
-            options.Languages.Add(new LanguageInfo("it", "it", "Italiano", "it"));
-            options.Languages.Add(new LanguageInfo("hu", "hu", "Magyar"));
-            options.Languages.Add(new LanguageInfo("pt-BR", "pt-BR", "Português"));
-            options.Languages.Add(new LanguageInfo("ro-RO", "ro-RO", "Română"));
-            options.Languages.Add(new LanguageInfo("ru", "ru", "Русский"));
-            options.Languages.Add(new LanguageInfo("sk", "sk", "Slovak"));
-            options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
             options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
-            options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文"));
-            options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsch"));
-            options.Languages.Add(new LanguageInfo("es", "es", "Español"));
-            options.Languages.Add(new LanguageInfo("el", "el", "Ελληνικά"));
         });
-
-        context.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.Authority = configuration["AuthServer:Authority"];
-                options.RequireHttpsMetadata = configuration.GetValue<bool>("AuthServer:RequireHttpsMetadata");
-                options.Audience = "BasicModule";
-            });
 
         Configure<AbpDistributedCacheOptions>(options =>
         {
-            options.KeyPrefix = "BasicModule:";
+            options.KeyPrefix = "AbpPro:";
         });
 
-        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("BasicModule");
-        if (!hostingEnvironment.IsDevelopment())
-        {
-            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
-            dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "BasicModule-Protection-Keys");
-        }
+        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("AbpPro");
+        var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
+        dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "BasicModule-Protection-Keys");
 
         context.Services.AddCors(options =>
         {
@@ -118,6 +72,127 @@ public class BasicModuleHttpApiHostModule : AbpModule
                     .AllowAnyMethod()
                     .AllowCredentials();
             });
+        });
+
+        context.Services.AddSwaggerGen(options =>
+            {
+                // 文件下载类型
+                options.MapType<FileContentResult>(() => new OpenApiSchema() { Type = "file" });
+
+                options.SwaggerDoc("BasicModule", new OpenApiInfo { Title = "BasicModule API", Version = "v1" });
+                options.DocInclusionPredicate((docName, description) => true);
+                options.EnableAnnotations(); // 启用注解
+                options.DocumentFilter<HiddenAbpDefaultApiFilter>();
+                options.SchemaFilter<EnumSchemaFilter>();
+                // 加载所有xml注释，这里会导致swagger加载有点缓慢
+                var xmlPaths = Directory.GetFiles(AppContext.BaseDirectory, "*.xml");
+                foreach (var xml in xmlPaths)
+                {
+                    options.IncludeXmlComments(xml, true);
+                }
+
+                options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme,
+                    new OpenApiSecurityScheme()
+                    {
+                        Description = "直接在下框输入JWT生成的Token",
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.Http,
+                        Scheme = JwtBearerDefaults.AuthenticationScheme,
+                        BearerFormat = "JWT"
+                    });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme, Id = "Bearer"
+                            }
+                        },
+                        new List<string>()
+                    }
+                });
+
+                options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
+                {
+                    Type = SecuritySchemeType.ApiKey,
+                    In = ParameterLocation.Header,
+                    Name = "Accept-Language",
+                    Description = "多语言设置，系统预设语言有zh-Hans、en，默认为zh-Hans",
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                                { Type = ReferenceType.SecurityScheme, Id = "ApiKey" }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
+
+        context.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+        }).AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters()
+            {
+                // 是否开启签名认证
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                //ClockSkew = TimeSpan.Zero,
+                ValidIssuer = configuration["Jwt:Issuer"],
+                ValidAudience = configuration["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["Jwt:SecurityKey"]))
+            };
+
+            options.Events = new JwtBearerEvents
+            {
+                OnMessageReceived = currentContext =>
+                {
+                    var path = currentContext.HttpContext.Request.Path;
+                    if (path.StartsWithSegments("/login"))
+                    {
+                        return Task.CompletedTask;
+                    }
+
+                    var accessToken = string.Empty;
+                    if (currentContext.HttpContext.Request.Headers.ContainsKey("Authorization"))
+                    {
+                        accessToken = currentContext.HttpContext.Request.Headers["Authorization"];
+                        if (!string.IsNullOrWhiteSpace(accessToken))
+                        {
+                            accessToken = accessToken.Split(" ").LastOrDefault();
+                        }
+                    }
+
+                    if (accessToken.IsNullOrWhiteSpace())
+                    {
+                        accessToken = currentContext.Request.Query["access_token"].FirstOrDefault();
+                    }
+
+                    if (accessToken.IsNullOrWhiteSpace())
+                    {
+                        accessToken = currentContext.Request.Cookies[DefaultCorsPolicyName];
+                    }
+
+                    currentContext.Token = accessToken;
+                    currentContext.Request.Headers.Remove("Authorization");
+                    currentContext.Request.Headers.Append("Authorization", $"Bearer {accessToken}");
+
+                    return Task.CompletedTask;
+                }
+            };
         });
     }
 
@@ -141,20 +216,18 @@ public class BasicModuleHttpApiHostModule : AbpModule
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
-        //if (MultiTenancyConsts.IsEnabled)
-        //{
-        //    app.UseMultiTenancy();
-        //}
+        if (MultiTenancyConsts.IsEnabled)
+        {
+            app.UseMultiTenancy();
+        }
         app.UseAbpRequestLocalization();
         app.UseAuthorization();
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
-
-            var configuration = context.GetConfiguration();
-            options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthScopes("BasicModule");
+            options.SwaggerEndpoint("/swagger/BasicModule/swagger.json", "BasicModule API");
+            options.DocExpansion(DocExpansion.None);
+            options.DefaultModelsExpandDepth(-1);
         });
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();

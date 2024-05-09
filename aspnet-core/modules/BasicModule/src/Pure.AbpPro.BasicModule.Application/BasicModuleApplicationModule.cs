@@ -2,10 +2,13 @@
 using Magicodes.ExporterAndImporter.Excel;
 using Pure.AbpPro.BasicModule.ConfigurationOptions;
 using Pure.AbpPro.BasicModule.Roles;
+using Volo.Abp.Account;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
+using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 
 namespace Pure.AbpPro.BasicModule;
@@ -14,7 +17,15 @@ namespace Pure.AbpPro.BasicModule;
     typeof(BasicModuleDomainModule),
     typeof(BasicModuleApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpIdentityAspNetCoreModule),
+    typeof(AbpAutoMapperModule),
+    typeof(AbpAccountApplicationModule),
+    typeof(AbpIdentityApplicationModule),
+    typeof(AbpPermissionManagementApplicationModule),
+    typeof(AbpTenantManagementApplicationModule),
+    typeof(AbpFeatureManagementApplicationModule),
+    typeof(AbpSettingManagementApplicationModule),
+    typeof(AbpAuditLoggingDomainModule)
     )]
 public class BasicModuleApplicationModule : AbpModule
 {
