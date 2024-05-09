@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Pure.AbpPro</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\BasicModule\src\Pure.AbpPro.BasicModule.Application\Pure.AbpPro.BasicModule.Application.csproj" />
+    <ProjectReference Include="..\Pure.AbpPro.Domain\Pure.AbpPro.Domain.csproj" />
+    <ProjectReference Include="..\Pure.AbpPro.Application.Contracts\Pure.AbpPro.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="$(UserProfile)\.nuget\packages\*\*\contentFiles\any\*\*.abppkg*" />
+  </ItemGroup>
+
+</Project>

@@ -54,6 +54,9 @@
     <!-- NEST ElasticSearch-->
     <PackageReference Update="NEST" Version="7.17.5"/>
 
+    <!-- Hangfire 后台任务-->
+    <PackageReference Update="Hangfire.Redis.StackExchange" Version="1.9.3"/>
+
     <PackageReference Update="SharpZipLib" Version="1.4.2"/>
 
     <!-- Ocelot 网关-->

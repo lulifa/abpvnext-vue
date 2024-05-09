@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Pure.AbpPro</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\BasicModule\src\Pure.AbpPro.BasicModule.Application.Contracts\Pure.AbpPro.BasicModule.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Pure.AbpPro.Domain.Shared\Pure.AbpPro.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.ObjectExtending" />
+  </ItemGroup>
+
+</Project>
