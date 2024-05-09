@@ -15,3 +15,6 @@ global using Volo.Abp.SettingManagement;
 global using Volo.Abp.TenantManagement;
 global using Volo.Abp.Validation.Localization;
 global using Volo.Abp.VirtualFileSystem;
+global using Microsoft.Extensions.Logging;
+global using System.Runtime.Serialization;
+global using Volo.Abp;

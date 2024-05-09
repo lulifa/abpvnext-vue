@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Runtime.Serialization;
-using Volo.Abp;
-
-namespace Pure.AbpPro.BasicModule.Dicts;
+﻿namespace Pure.AbpPro.BasicModule.Dicts;
 
 public class DataDictionaryDomainException : BusinessException
 {
