@@ -52,87 +52,18 @@ public class BasicModuleHttpApiHostModule : AbpModule
             options.IsDynamicPermissionStoreEnabled = true;
         });
 
-        context.Services.AddCors(options =>
-        {
-            options.AddDefaultPolicy(builder =>
-            {
-                builder
-                    .WithOrigins(
-                        configuration["App:CorsOrigins"]?
-                            .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                            .Select(o => o.RemovePostFix("/"))
-                            .ToArray() ?? Array.Empty<string>()
-                    )
-                    .WithAbpExposedHeaders()
-                    .SetIsOriginAllowedToAllowWildcardSubdomains()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials();
-            });
-        });
 
-        context.Services.AddSwaggerGen(options =>
-            {
-                // 文件下载类型
-                options.MapType<FileContentResult>(() => new OpenApiSchema() { Type = "file" });
+        ConfigureCors(context, configuration);
 
-                options.SwaggerDoc("BasicModule", new OpenApiInfo { Title = "BasicModule API", Version = "v1" });
-                options.DocInclusionPredicate((docName, description) => true);
-                options.EnableAnnotations(); // 启用注解
-                options.DocumentFilter<HiddenAbpDefaultApiFilter>();
-                options.SchemaFilter<EnumSchemaFilter>();
-                // 加载所有xml注释，这里会导致swagger加载有点缓慢
-                var xmlPaths = Directory.GetFiles(AppContext.BaseDirectory, "*.xml");
-                foreach (var xml in xmlPaths)
-                {
-                    options.IncludeXmlComments(xml, true);
-                }
+        ConfigureAuthentication(context, configuration);
 
-                options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme,
-                    new OpenApiSecurityScheme()
-                    {
-                        Description = "直接在下框输入JWT生成的Token",
-                        Name = "Authorization",
-                        In = ParameterLocation.Header,
-                        Type = SecuritySchemeType.Http,
-                        Scheme = JwtBearerDefaults.AuthenticationScheme,
-                        BearerFormat = "JWT"
-                    });
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme, Id = "Bearer"
-                            }
-                        },
-                        new List<string>()
-                    }
-                });
+        ConfigureSwaggerServices(context);
 
-                options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
-                {
-                    Type = SecuritySchemeType.ApiKey,
-                    In = ParameterLocation.Header,
-                    Name = "Accept-Language",
-                    Description = "多语言设置，系统预设语言有zh-Hans、en，默认为zh-Hans",
-                });
+        ConfigureDataProtection(context, configuration, hostingEnvironment);
+    }
 
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                                { Type = ReferenceType.SecurityScheme, Id = "ApiKey" }
-                        },
-                        Array.Empty<string>()
-                    }
-                });
-            });
-
+    private void ConfigureAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
+    {
         context.Services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -190,6 +121,102 @@ public class BasicModuleHttpApiHostModule : AbpModule
                     return Task.CompletedTask;
                 }
             };
+        });
+    }
+    private static void ConfigureSwaggerServices(ServiceConfigurationContext context)
+    {
+        context.Services.AddSwaggerGen(options =>
+        {
+            // 文件下载类型
+            options.MapType<FileContentResult>(() => new OpenApiSchema() { Type = "file" });
+
+            options.SwaggerDoc("BasicModule", new OpenApiInfo { Title = "BasicModule API", Version = "v1" });
+            options.DocInclusionPredicate((docName, description) => true);
+            options.EnableAnnotations(); // 启用注解
+            options.DocumentFilter<HiddenAbpDefaultApiFilter>();
+            options.SchemaFilter<EnumSchemaFilter>();
+            // 加载所有xml注释，这里会导致swagger加载有点缓慢
+            var xmlPaths = Directory.GetFiles(AppContext.BaseDirectory, "*.xml");
+            foreach (var xml in xmlPaths)
+            {
+                options.IncludeXmlComments(xml, true);
+            }
+
+            options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme,
+                new OpenApiSecurityScheme()
+                {
+                    Description = "直接在下框输入JWT生成的Token",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = JwtBearerDefaults.AuthenticationScheme,
+                    BearerFormat = "JWT"
+                });
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme, Id = "Bearer"
+                            }
+                        },
+                        new List<string>()
+                    }
+                });
+
+            options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
+            {
+                Type = SecuritySchemeType.ApiKey,
+                In = ParameterLocation.Header,
+                Name = "Accept-Language",
+                Description = "多语言设置，系统预设语言有zh-Hans、en，默认为zh-Hans",
+            });
+
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                                { Type = ReferenceType.SecurityScheme, Id = "ApiKey" }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+        });
+    }
+
+    private void ConfigureDataProtection(ServiceConfigurationContext context,IConfiguration configuration,IWebHostEnvironment hostingEnvironment)
+    {
+        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("AbpPro");
+        if (!hostingEnvironment.IsDevelopment())
+        {
+            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
+            dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "AbpPro-Protection-Keys");
+        }
+    }
+
+    private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
+    {
+        context.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(builder =>
+            {
+                builder
+                    .WithOrigins(
+                        configuration["App:CorsOrigins"]?
+                            .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                            .Select(o => o.RemovePostFix("/"))
+                            .ToArray() ?? Array.Empty<string>()
+                    )
+                    .WithAbpExposedHeaders()
+                    .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            });
         });
     }
 

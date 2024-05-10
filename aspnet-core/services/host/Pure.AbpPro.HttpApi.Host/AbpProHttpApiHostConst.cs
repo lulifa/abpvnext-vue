@@ -10,7 +10,7 @@ namespace Pure.AbpPro
         /// <summary>
         /// Cookies名称
         /// </summary>
-        public const string DefaultCookieName = "Lion.AbpPro.Http.Api";
+        public const string DefaultCookieName = "Pure.AbpPro.Http.Api";
 
         /// <summary>
         /// SwaggerUi 端点
@@ -28,7 +28,7 @@ namespace Pure.AbpPro
         public const string CapDashboardEndPoint = "/cap";
         
     
-        public const string MoreEndPoint = "https://doc.cncore.club/";
+        public const string MoreEndPoint = "https://www.baidu.com/";
         
         
         /// <summary>

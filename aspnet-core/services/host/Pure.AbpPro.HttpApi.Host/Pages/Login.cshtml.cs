@@ -5,7 +5,6 @@ using Pure.AbpPro.BasicModule.Users.Dtos;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Volo.Abp.Timing;
 using Microsoft.Extensions.Options;
-using Pure.AbpPro;
 
 
 namespace Pure.AbpPro.Pages
