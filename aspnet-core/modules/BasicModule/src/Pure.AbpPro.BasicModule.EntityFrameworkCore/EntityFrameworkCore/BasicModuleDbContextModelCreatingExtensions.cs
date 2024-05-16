@@ -16,18 +16,5 @@ public static class BasicModuleDbContextModelCreatingExtensions
         builder.ConfigureIdentity();
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
-
-        builder.Entity<DataDictionary>(b =>
-        {
-            b.ToTable(BasicModuleDbProperties.DbTablePrefix + "DataDictionaries", BasicModuleDbProperties.DbSchema);
-            b.HasMany(e => e.Details).WithOne().HasForeignKey(uc => uc.DataDictionaryId).IsRequired();
-            b.ConfigureByConvention();
-        });
-
-        builder.Entity<DataDictionaryDetail>(b =>
-        {
-            b.ToTable(BasicModuleDbProperties.DbTablePrefix + "DataDictionaryDetails", BasicModuleDbProperties.DbSchema);
-            b.ConfigureByConvention();
-        });
     }
 }

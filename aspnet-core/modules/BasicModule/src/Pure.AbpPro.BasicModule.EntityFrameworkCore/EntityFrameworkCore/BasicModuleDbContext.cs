@@ -24,9 +24,6 @@ public class BasicModuleDbContext : AbpDbContext<BasicModuleDbContext>, IBasicMo
     public DbSet<BackgroundJobRecord> BackgroundJobs { get; set; }
     public DbSet<AuditLog> AuditLogs { get; set; }
 
-    public DbSet<DataDictionary> DataDictionaries { get; set; }
-    public DbSet<DataDictionaryDetail> DataDictionaryDetails { get; set; }
-
     public BasicModuleDbContext(DbContextOptions<BasicModuleDbContext> options)
         : base(options)
     {

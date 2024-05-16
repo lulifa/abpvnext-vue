@@ -25,8 +25,6 @@ public class AbpProDbContext : AbpDbContext<AbpProDbContext>, IAbpProDbContext, 
     public DbSet<BackgroundJobRecord> BackgroundJobs { get; set; }
     public DbSet<AuditLog> AuditLogs { get; set; }
 
-    public DbSet<DataDictionary> DataDictionaries { get; set; }
-    public DbSet<DataDictionaryDetail> DataDictionaryDetails { get; set; }
 
     //public DbSet<Notification> Notifications { get; set; }
     //public DbSet<NotificationSubscription> NotificationSubscriptions { get; set; }
